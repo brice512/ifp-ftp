@@ -1,0 +1,184 @@
+<div class="container">
+    <header class="header">
+        <img src="../../assets/Images/Prioritaire/logo.jpg" height="80" width="80" style="border-radius: 15px;" alt="">
+        <h1 class="logo">IFP STP Mbouda</h1>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <div class="hero-text">
+            <h2 class="hero-title">Bienvenue à l'IFP STPM</h2>
+            <p class="hero-description">
+                Nous sommes ravis de vous accueillir dans notre communauté dédiée à l’excellence et à l’innovation dans
+                le domaine
+                paramédical. Notre institut s’engage à fournir une formation de qualité, alliant théorie et pratique,
+                pour préparer nos
+                étudiants à devenir des professionnels compétents et passionnés.
+            </p>
+            <div class="middle">
+                <a class="btn" href="#formular">
+                    <span class="wave"></span>
+                    <span class="text">En savoir plus</span>
+                </a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="../../assets/Images/Prioritaire/WhatsApp Image 2024-09-13 à 14.24.56_e177885e.jpg"
+                alt="Technology Image">
+        </div>
+
+
+    </div>
+    <div class="hero2" id="formular">
+        <div class="card col-lg-5 col-md-6 col-sm-10 border-0  mb-5 shadow p-3 bg-body-tertiary rounded">
+            <h2 class="text-secondary text-center mb-3"><em>Obtenez une Bourse d'etude </em></h2>
+            <form class="me-5 ms-5 mt-2" [formGroup]="validationFormContact">
+
+
+                <div class="df ">
+                    <div class="col-auto ">
+                        <label for="inputPassword5" class="form-label">Nom</label>
+
+                        <input class="form-control col-lg-4 col-sm-6 col-md-7" formControlName="firstName" id="text"
+                            type="text" />
+                        <div></div>
+                        <ng-container *ngFor="let validation of validationUserMessage.firstName">
+                            <div class="error_message" *ngIf="
+                                  validationFormContact
+                                    ?.get('firstName')
+                                    ?.hasError(validation.type + '') &&
+                                  (validationFormContact?.get('firstName')?.dirty ||
+                                    validationFormContact?.get('firstName')?.touched)
+                                ">
+                                {{ validation.message }}
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+
+
+                <div class="col-auto">
+                    <label for="inputPassword5" class="form-label">Prenom</label>
+
+                    <input class="form-control col-lg-4 col-sm-6 col-md-7" formControlName="lastName" id="text"
+                        type="text" />
+
+                    <div>
+                        <ng-container *ngFor="let validation of validationUserMessage.lastName">
+                            <div class="error_message" *ngIf="
+                                                              validationFormContact
+                                                                ?.get('lastName')
+                                                                ?.hasError(validation.type + '') &&
+                                                              (validationFormContact?.get('lastName')?.dirty ||
+                                                                validationFormContact?.get('lastName')?.touched)
+                                                            ">
+                                {{ validation.message }}
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+
+
+                <div class="dl">
+                    <div class="col-auto">
+                        <label for="inputPassword5" class="form-label">Contact</label>
+
+                        <input class="form-control col-lg-4 col-sm-6 col-md-7" formControlName="contact" id="text"
+                            type="number" />
+                        <div>
+                            <ng-container *ngFor="let validation of validationUserMessage.contact">
+                                <div class="error_message" *ngIf="
+                                  validationFormContact
+                                    ?.get('contact')
+                                    ?.hasError(validation.type + '') &&
+                                  (validationFormContact?.get('contact')?.dirty ||
+                                    validationFormContact?.get('contact')?.touched)
+                                ">
+                                    {{ validation.message }}
+                                </div>
+                            </ng-container>
+                        </div>
+                    </div>
+
+                    <div class="col-auto">
+                        <label for="inputPassword5" class="form-label">Sexe</label>
+
+                        <select formControlName="sexe" formControlName="sexe"
+                            class="form-select form-control col-lg-4 col-sm-6 col-md-7"
+                            aria-label="Default select example">
+                            <option value="homme">Homme</option>
+                            <option value="femme">Femme</option>
+                        </select>
+                        <div>
+                            <ng-container *ngFor="let validation of validationUserMessage.sexe">
+                                <div class="error_message" *ngIf="
+                                  validationFormContact
+                                    ?.get('sexe')
+                                    ?.hasError(validation.type + '') &&
+                                  (validationFormContact?.get('sexe')?.dirty ||
+                                    validationFormContact?.get('sexe')?.touched)
+                                ">
+                                    {{ validation.message }}
+                                </div>
+                            </ng-container>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+
+                    <div class="col-auto">
+                        <label for="inputPassword5" class="form-label">Spécialité</label>
+
+                        <select class="form-select col-lg-4 col-sm-6 col-md-7" formControlName="option"
+                            aria-label="Default select example">
+                            <option *ngFor="let option of Options" [value]="option.id">
+                                {{ option.name }}
+                            </option>
+                        </select>
+                        <div>
+                            <ng-container *ngFor="let validation of validationUserMessage.option">
+                                <div class="error_message" *ngIf="
+                                                          validationFormContact
+                                                            ?.get('option')
+                                                            ?.hasError(validation.type + '') &&
+                                                          (validationFormContact?.get('option')?.dirty ||
+                                                            validationFormContact?.get('option')?.touched)
+                                                        ">
+                                    {{ validation.message }}
+                                </div>
+                            </ng-container>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+                <div class="d-flex mt-4 justify-content-around">
+                    <div class="col-auto">
+                        <button class="btn btn-danger" type="reset">
+                            <i class="bi bi-trash"></i>
+                            Annuler
+                        </button>
+                    </div>
+                    <div class="col-auto">
+                        <button class="btn btn-success" (click)="submitForm()">
+                            <i class="bi bi-save"></i>
+                            Soumettre
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+
+
+    </script>
